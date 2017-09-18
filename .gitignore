@@ -25,19 +25,8 @@ build/
 /target
 
 ### Eclipse project file ###
-.metadata
-.classpath
-.project
-.settings/
 bin/
 tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-.loadpath
-.launch
-.cproject
 
 
 # IntelliJ project files
