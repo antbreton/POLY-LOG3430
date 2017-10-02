@@ -7,7 +7,7 @@ import org.junit.Test;
 import edu.princeton.cs.algs4.Graph;
 import edu.princeton.cs.algs4.GraphGenerator;
 
-public class GraphGeneratorTestVerticeCount {
+public class GraphGeneratorVerticeCountTest {
 
 	@Test
 	public void testBinaryTree() {

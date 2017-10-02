@@ -11,17 +11,33 @@ import edu.princeton.cs.algs4.GraphGenerator;
 public class GraphGeneratorECTests {
 
 	/*
-	 * La description des tests est écrite sur le rapport. Tout les tests ici
+	 * La description des tests est écrite sur le rapport. Tous les tests ici
 	 * présents sont nommés test + numéro de test. Pour voir leur description,
-	 * il suffit de consulter les tableaux de jeu de test.
+	 * il suffit de consulter les tableaux de trames de test.
+	 * 
+	 * S1 => V0 P0 [erreur]
+	 * 
+	 * S2 => V1 P1
+	 * 
+	 * 
+	 * S3 => V2 P2
+	 * 
+	 * 
+	 * S4 => V3 P3
+	 * 
+	 * 
+	 * S5 => V3 P4
+	 * 
+	 * 
 	 * 
 	 */
+	
 	@Test
 	public void testS1() {
 		try
 		{
 			Graph g = GraphGenerator.simple(0,-1);
-			fail("negative probability should raise an exception");
+			fail("Negative probability should raise an exception");
 		}
 		catch (Exception e)
 		{
@@ -32,7 +48,7 @@ public class GraphGeneratorECTests {
 	@Test
 	public void testS2() {
 		Graph g = GraphGenerator.simple(12,0.05);
-		
+
 		// Test sur le nombre de sommets
 		assertEquals(12, g.V()); 
 		
@@ -63,22 +79,10 @@ public class GraphGeneratorECTests {
 		assertEquals(44850, g.E()); 
 	}
 	
-	/*
-	 * 
-	 * V0 P0 erreur
-	 * 
-	 * V1 P1
-	 * 
-	 * 
-	 * V2 P2
-	 * 
-	 * 
-	 * V3 P3
-	 * 
-	 * 
-	 * V3 P4
-	 * 
-	 * 
-	 * 
-	 */
+
+	
+	
+	
+	
+	
 }
