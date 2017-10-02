@@ -16,7 +16,7 @@ public class GraphGeneratorACTests {
 		int V2 = -2;
 		double p = 2;
 		try{
-			Graph g = GraphGenerator.bipartite(-1,-2,2);
+			Graph g = GraphGenerator.bipartite(V1,V2,p);
 			fail(" Number of vertices can't be negative");
 		}catch(Exception e){
 			
@@ -30,7 +30,7 @@ public class GraphGeneratorACTests {
 		int V2 = -8;
 		double p = 0.5;
 		try{
-			Graph g = GraphGenerator.bipartite(-4,-8,0.5);
+			Graph g = GraphGenerator.bipartite(V1,V2,p);
 			fail("Number of vertices can't be negative");
 		}catch(Exception e){}
 	}
@@ -41,7 +41,7 @@ public class GraphGeneratorACTests {
 		int V2 = 15;
 		double p = -2;
 		try{
-			Graph g = GraphGenerator.bipartite(-2,15,-2);
+			Graph g = GraphGenerator.bipartite(V1, V2, p);
 			fail(" Probability p must be between 0 and 1");
 		}catch(Exception e){}
 	}
