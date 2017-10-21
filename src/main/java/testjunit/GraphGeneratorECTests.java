@@ -13,7 +13,7 @@ public class GraphGeneratorECTests {
 	/*
 	 * La description des tests est écrite sur le rapport. Tous les tests ici
 	 * présents sont nommés test + numéro de test. Pour voir leur description,
-	 * il suffit de consulter les tableaux de trames de test.
+	 * il suffit de consulter les tableaux des trames de tests.
 	 * 
 	 * S1 => V0 P0 [erreur]
 	 * 
@@ -78,11 +78,4 @@ public class GraphGeneratorECTests {
 		// Test sur les probabilités d'ajout d'aretes
 		assertEquals(44850, g.E()); 
 	}
-	
-
-	
-	
-	
-	
-	
 }

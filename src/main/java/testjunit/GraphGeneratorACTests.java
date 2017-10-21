@@ -7,8 +7,13 @@ import org.junit.Test;
 import edu.princeton.cs.algs4.Graph;
 import edu.princeton.cs.algs4.GraphGenerator;
 
+// Cette classe de test réalise les Test suivant le critère All combinations (AC)
 public class GraphGeneratorACTests {
-
+	
+	// Partie sur les graphes simples : à remplir par Antoine 
+	//S3, S4, S5, S6
+	
+	
 	//V0 V'0 P0 ==> Erreur
 	@Test
 	public void testB3() {
@@ -23,7 +28,7 @@ public class GraphGeneratorACTests {
 		}
 	}
 	
-	//V0 V'0 p
+	//V0 V'0 p => Erreur
 	@Test
 	public void testB4(){
 		int V1 = -4; 
@@ -35,6 +40,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}
 	}
 
+	// V0 V'1 p0 => Erreur
 	@Test
 	public void testB5(){
 		int V1 = -2; 
@@ -46,6 +52,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}
 	}
 	
+	//V0 V'1 p1 => simple(V'1, p1) 
 	@Test
 	public void testB6(){
 		int V1 = 0;
@@ -56,6 +63,7 @@ public class GraphGeneratorACTests {
 		assertEquals(sommeV, g.V());
 	}
 	
+	//V1 V'0 p0 => Erreur
 	@Test
 	public void testB7(){
 		int V1 = 12; 
@@ -67,6 +75,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}
 	}
 	
+	//V1 V'0 p1 => simple(V1, p1)
 	@Test
 	public void testB8(){
 		int V1 = 25;
@@ -77,6 +86,7 @@ public class GraphGeneratorACTests {
 		assertEquals(sommeV, g.V());
 	}
 	
+	//V1 V'1 p0 => Erreur
 	@Test
 	public void testB9(){
 		int V1 = 50; 
@@ -88,6 +98,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}		
 	}
 	
+	// V1 V'1 p1 => bipartite(V1, V'1, p1)
 	@Test
 	public void testB10(){
 		int V1 = 300;
@@ -97,7 +108,8 @@ public class GraphGeneratorACTests {
 		Graph g = GraphGenerator.bipartite(V1, V2, p);
 		assertEquals(sommeV, g.V());
 	}
-
+	
+	// V0 k0 => Erreur
 	@Test
 	public void testR3(){
 		int V=-3;
@@ -108,6 +120,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}
 	}
 
+	// V0 k1 => Erreur
 	@Test
 	public void testR4(){
 		int V=-2;
@@ -118,6 +131,7 @@ public class GraphGeneratorACTests {
 			}catch(Exception e){}
 	}
 	
+	// V1 k0 => Erreur
 	@Test
 	public void testR5(){
 		try{
@@ -128,6 +142,7 @@ public class GraphGeneratorACTests {
 		}catch(Exception e){}
 	}
 	
+	// V1 k0 => regulier(V1, k1)
 	@Test
 	public void testR6(){
 		int V = 15; 

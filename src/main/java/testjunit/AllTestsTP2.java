@@ -6,6 +6,9 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ GraphGeneratorECTests.class, GraphGeneratorACTests.class})
+@SuiteClasses({ 
+	GraphGeneratorECTests.class,
+	GraphGeneratorACTests.class
+	})
 
 public class AllTestsTP2 {}
