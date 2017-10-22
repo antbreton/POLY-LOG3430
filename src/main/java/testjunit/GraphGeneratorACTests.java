@@ -11,7 +11,53 @@ import edu.princeton.cs.algs4.GraphGenerator;
 public class GraphGeneratorACTests {
 	
 	// Partie sur les graphes simples : à remplir par Antoine 
-	//S3, S4, S5, S6
+		@Test
+	public void testS3() {
+		Graph g = GraphGenerator.simple(50,0.6);
+		
+		// Test sur le nombre de sommets
+		assertEquals(50, g.V()); 
+		
+		// Test sur les probabilités d'ajout d'aretes
+		//assertEquals(5, g.E());
+		assertEquals(true, g.E()>=600 && g.E() <=800); 
+	}
+	
+	@Test
+	public void testS4() {
+		Graph g = GraphGenerator.simple(300,1.0);
+		
+		// Test sur le nombre de sommets
+		assertEquals(300, g.V()); 
+		
+		// Test sur les probabilités d'ajout d'aretes
+		assertEquals(44850, g.E()); 
+	}
+	
+	// V1 p0 --> erreur
+	@Test
+	public void testS5() {
+		Graph g = GraphGenerator.simple(300,2.0);
+		
+		// Test sur le nombre de sommets
+		assertEquals(300, g.V()); 
+		
+		// Test sur les probabilités d'ajout d'aretes
+		assertEquals(44850, g.E()); 
+	}
+	
+	// V1p1 -->Simple (V1, p1)
+	@Test
+	public void testS6() {
+		Graph g = GraphGenerator.simple(300,0.5);
+		
+		// Test sur le nombre de sommets
+		assertEquals(300, g.V()); 
+		
+		// Test sur les probabilités d'ajout d'aretes
+		assertEquals(44850, g.E()); 
+	}
+
 	
 	
 	//V0 V'0 P0 ==> Erreur
