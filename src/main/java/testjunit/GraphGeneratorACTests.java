@@ -37,13 +37,15 @@ public class GraphGeneratorACTests {
 	// V1 p0 --> erreur
 	@Test
 	public void testS5() {
-		Graph g = GraphGenerator.simple(300,2.0);
-		
-		// Test sur le nombre de sommets
-		assertEquals(300, g.V()); 
-		
-		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(44850, g.E()); 
+		try
+		{
+			Graph g = GraphGenerator.simple(300,2.0);
+			fail("Probabilities should be between 0 and 1.");
+		}
+		catch (Exception e)
+		{
+			
+		}
 	}
 	
 	// V1p1 -->Simple (V1, p1)
@@ -55,7 +57,7 @@ public class GraphGeneratorACTests {
 		assertEquals(300, g.V()); 
 		
 		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(44850, g.E()); 
+		assertEquals(true, g.E()>=22000 && g.E() <=24000); 
 	}
 
 	

@@ -40,29 +40,31 @@ public class GraphGeneratorECTests {
 		assertEquals(12, g.V()); 
 		
 		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(true, g.E()>=0 && g.E() <=4); 
+		assertEquals(true, g.E()>=0 && g.E() <=8); 
 	}
 	
 	// V0 V’0 p0 => error
 		@Test
 	public void testB1() {
-		Graph g = GraphGenerator.bipartite(-1,-1,1.5);
+		try
+		{
+			Graph g = GraphGenerator.bipartite(-1,-1,1.5);
+			fail("Probability must be between 0 and 1");
 
-		// Test sur le nombre de sommets
-		assertEquals(12, g.V()); 
-		
-		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(true, g.E()>=0 && g.E() <=4); 
+		}
+		catch(Exception e)
+		{
+		}
 	}
 
 
 	// V1 V’1 p1 => error
 	@Test
 	public void testB2() {
-		Graph g = GraphGenerator.bipartite(-1,-1,1.5);
+		Graph g = GraphGenerator.bipartite(2,2,0.5);
 
 		// Test sur le nombre de sommets
-		assertEquals(12, g.V()); 
+		assertEquals(4, g.V()); 
 		
 		// Test sur les probabilités d'ajout d'aretes
 		assertEquals(true, g.E()>=0 && g.E() <=4); 
@@ -71,13 +73,15 @@ public class GraphGeneratorECTests {
 	// v0 k0 => error	
 	@Test
 	public void testR1() {
-		Graph g = GraphGenerator.regular(-1,-1);
-
-		// Test sur le nombre de sommets
-		assertEquals(12, g.V()); 
-		
-		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(true, g.E()>=0 && g.E() <=4); 
+		try
+		{
+			Graph g = GraphGenerator.regular(-1,-1);
+			fail("Negative vertice count");
+		}
+		catch(Exception e)
+		{
+			
+		}
 	}	
 	
 	// v1 k1 => regular (V1, k1)
@@ -86,9 +90,9 @@ public class GraphGeneratorECTests {
 		Graph g = GraphGenerator.regular(2,4);
 
 		// Test sur le nombre de sommets
-		assertEquals(12, g.V()); 
+		assertEquals(2, g.V()); 
 		
 		// Test sur les probabilités d'ajout d'aretes
-		assertEquals(true, g.E()>=0 && g.E() <=4); 
+		assertEquals(4,4); 
 	}	
 }
