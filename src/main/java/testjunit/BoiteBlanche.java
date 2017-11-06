@@ -15,7 +15,7 @@ public class BoiteBlanche {
 	 */
 	
 	@Test
-	public void bipartite_0() {
+	public void bipartite_0_1() {
 		
 		try
 		{
@@ -29,7 +29,7 @@ public class BoiteBlanche {
 	}
 	
 	@Test
-	public void bipartite_1() {
+	public void bipartite_1_2() {
 		
 		try
 		{
@@ -46,14 +46,14 @@ public class BoiteBlanche {
 	 * Simple
 	 */
 	@Test
-	public void simple_0() {
+	public void simple_0_3() {
 		Graph g = GraphGenerator.simple(10,10);
 		
 		assertEquals(g.getTypeName(), "simple");
 	}
 	
 	@Test
-	public void simple_1() {
+	public void simple_1_4() {
 		
 		try
 		{
@@ -64,7 +64,7 @@ public class BoiteBlanche {
 	}
 	
 	@Test
-	public void simple_2() {
+	public void simple_5() {
 		
 		try
 		{
@@ -78,7 +78,7 @@ public class BoiteBlanche {
 	 * binaryTree
 	 */
 	@Test
-	public void binaryTree_() {
+	public void binaryTree_6() {
 		Graph g = GraphGenerator.binaryTree(10);
 		
 		assertEquals(g.getTypeName(), "binaryTree");
@@ -89,7 +89,7 @@ public class BoiteBlanche {
 	 */
 	
 	@Test
-	public void complete_() {
+	public void complete_7() {
 		Graph g = GraphGenerator.complete(10);
 		
 		assertEquals(g.getTypeName(), "complete");
@@ -99,7 +99,7 @@ public class BoiteBlanche {
 	 * completeBipartite
 	 */
 	@Test
-	public void completeBipartite_() {
+	public void completeBipartite_8() {
 		Graph g = GraphGenerator.completeBipartite(10,10);
 		
 		assertEquals(g.getTypeName(), "completeBipartite");
@@ -110,7 +110,7 @@ public class BoiteBlanche {
 	 */
 	
 	@Test
-	public void path_() {
+	public void path_9() {
 		Graph g = GraphGenerator.path(10);
 		
 		assertEquals(g.getTypeName(), "path");
@@ -121,14 +121,14 @@ public class BoiteBlanche {
 	 */
 	
 	@Test
-	public void star_0() {
+	public void star_10() {
 		Graph g = GraphGenerator.star(10);
 		
 		assertEquals(g.getTypeName(), "star");
 	}
 	
 	@Test
-	public void star_1() {
+	public void star_11() {
 		
 		try
 		{
@@ -142,7 +142,7 @@ public class BoiteBlanche {
 	}
 	
 	@Test
-	public void cycle_() {
+	public void cycle_12() {
 		Graph g = GraphGenerator.cycle(10);
 		
 		assertEquals(g.getTypeName(), "cycle");
@@ -152,13 +152,13 @@ public class BoiteBlanche {
 	 * euleriqnCycle
 	 */
 	@Test
-	public void eulerianCycle_() {
+	public void eulerianCycle_0_13() {
 		Graph g = GraphGenerator.eulerianCycle(10,20);
 		
 		assertEquals(g.getTypeName(), "eulerianCycle");
 	}
 	@Test
-	public void eulerianCycle_1() {
+	public void eulerianCycle_1_14() {
 		
 		try
 		{
@@ -169,7 +169,7 @@ public class BoiteBlanche {
 	}
 	
 	@Test
-	public void eulerianCycle_2() {
+	public void eulerianCycle_2_15() {
 		
 		try
 		{
@@ -183,14 +183,14 @@ public class BoiteBlanche {
 	 * EulerianPath
 	 */
 	@Test
-	public void eulerianPath_() {
+	public void eulerianPath_0_16() {
 		Graph g = GraphGenerator.eulerianPath(10,15);
 		
 		assertEquals(g.getTypeName(), "eulerianPath");
 	}
 	
 	@Test
-	public void eulerianPath_1() {
+	public void eulerianPath_1_17() {
 		
 		try
 		{
@@ -201,7 +201,7 @@ public class BoiteBlanche {
 	}
 	
 	@Test
-	public void eulerianPath_2() {
+	public void eulerianPath_2_18() {
 		
 		try
 		{
@@ -214,14 +214,14 @@ public class BoiteBlanche {
 	 * wheel
 	 */
 	@Test
-	public void wheel_0() {
+	public void wheel_0_19() {
 		Graph g = GraphGenerator.wheel(10);
 		
 		assertEquals(g.getTypeName(), "wheel");
 	}
 	
 	@Test
-	public void wheel_1() {
+	public void wheel_1_20() {
 		
 		try
 		{
@@ -240,14 +240,14 @@ public class BoiteBlanche {
 	 * tree 
 	 */
 	@Test
-	public void tree_0() {
+	public void tree_0_21() {
 		Graph g = GraphGenerator.tree(10);
 		
 		assertEquals(g.getTypeName(), "tree");
 	}
 	
 	@Test
-	public void tree_1() {
+	public void tree_1_22() {
 		Graph g = GraphGenerator.tree(1);
 		
 		assertEquals(g.getTypeName(), "tree");
