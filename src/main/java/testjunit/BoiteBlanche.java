@@ -73,6 +73,16 @@ public class BoiteBlanche {
 		}
 		catch(Exception e) {}
 	}
+	
+	@Test
+	public void simple_1_6 (){
+		try
+		{
+			Graph g = GraphGenerator.simple(10,-1.0);			
+			fail();
+		}
+		catch(Exception e) {}
+	}
 		
 	/*
 	 * binaryTree
