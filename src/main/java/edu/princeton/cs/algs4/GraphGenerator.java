@@ -420,7 +420,7 @@ public class GraphGenerator {
      * Unit tests the {@code GraphGenerator} library.
      *
      * @param args the command-line arguments
-     */
+     *//*
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);
         int E = Integer.parseInt(args[1]);
@@ -481,7 +481,7 @@ public class GraphGenerator {
         StdOut.println(wheel(V));
         StdOut.println();
     }
-
+*/
 }
 
 /******************************************************************************

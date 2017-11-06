@@ -74,6 +74,9 @@ public class BoiteBlanche {
 		catch(Exception e) {}
 	}
 		
+	/*
+	 * binaryTree
+	 */
 	@Test
 	public void binaryTree_() {
 		Graph g = GraphGenerator.binaryTree(10);
@@ -81,6 +84,10 @@ public class BoiteBlanche {
 		assertEquals(g.getTypeName(), "binaryTree");
 	}
 
+	/*
+	 * complete
+	 */
+	
 	@Test
 	public void complete_() {
 		Graph g = GraphGenerator.complete(10);
@@ -88,12 +95,19 @@ public class BoiteBlanche {
 		assertEquals(g.getTypeName(), "complete");
 	}
 	
+	/*
+	 * completeBipartite
+	 */
 	@Test
 	public void completeBipartite_() {
 		Graph g = GraphGenerator.completeBipartite(10,10);
 		
 		assertEquals(g.getTypeName(), "completeBipartite");
 	}
+	
+	/*
+	 * Path
+	 */
 	
 	@Test
 	public void path_() {

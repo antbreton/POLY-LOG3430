@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>GraphGeneratorACTests.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsTP3 (6 nov. 2017 10:51:31)</a> &gt; <a href="../../index.html" class="el_group">algs4</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">testjunit</a> &gt; <span class="el_source">GraphGeneratorACTests.java</span></div><h1>GraphGeneratorACTests.java</h1><pre class="source lang-java linenums">package testjunit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+// Cette classe de test réalise les Test suivant le critère All combinations (AC)
+<span class="fc" id="L11">public class GraphGeneratorACTests {</span>
+	
+	// Partie sur les graphes simples : à remplir par Antoine 
+		@Test
+	public void testS3() {
+<span class="fc" id="L16">		Graph g = GraphGenerator.simple(50,0.6);</span>
+		
+		// Test sur le nombre de sommets
+<span class="fc" id="L19">		assertEquals(50, g.V()); </span>
+		
+		// Test sur les probabilités d'ajout d'aretes
+		//assertEquals(5, g.E());
+<span class="pc bpc" id="L23" title="2 of 4 branches missed.">		assertEquals(true, g.E()&gt;=600 &amp;&amp; g.E() &lt;=800); </span>
+<span class="fc" id="L24">	}</span>
+	
+	@Test
+	public void testS4() {
+<span class="fc" id="L28">		Graph g = GraphGenerator.simple(300,1.0);</span>
+		
+		// Test sur le nombre de sommets
+<span class="fc" id="L31">		assertEquals(300, g.V()); </span>
+		
+		// Test sur les probabilités d'ajout d'aretes
+<span class="fc" id="L34">		assertEquals(44850, g.E()); </span>
+<span class="fc" id="L35">	}</span>
+	
+	// V1 p0 --&gt; erreur
+	@Test
+	public void testS5() {
+		try
+		{
+<span class="nc" id="L42">			Graph g = GraphGenerator.simple(300,2.0);</span>
+<span class="nc" id="L43">			fail(&quot;Probabilities should be between 0 and 1.&quot;);</span>
+<span class="nc" id="L44">		}</span>
+<span class="fc" id="L45">		catch (Exception e)</span>
+		{
+			
+		}
+<span class="fc" id="L49">	}</span>
+	
+	// V1p1 --&gt;Simple (V1, p1)
+	@Test
+	public void testS6() {
+<span class="fc" id="L54">		Graph g = GraphGenerator.simple(300,0.5);</span>
+		
+		// Test sur le nombre de sommets
+<span class="fc" id="L57">		assertEquals(300, g.V()); </span>
+		
+		// Test sur les probabilités d'ajout d'aretes
+<span class="pc bpc" id="L60" title="2 of 4 branches missed.">		assertEquals(true, g.E()&gt;=22000 &amp;&amp; g.E() &lt;=24000); </span>
+<span class="fc" id="L61">	}</span>
+
+	
+	
+	//V0 V'0 P0 ==&gt; Erreur
+	@Test
+	public void testB3() {
+<span class="fc" id="L68">		int V1 = -1; </span>
+<span class="fc" id="L69">		int V2 = -2;</span>
+<span class="fc" id="L70">		double p = 2;</span>
+		try{
+<span class="nc" id="L72">			Graph g = GraphGenerator.bipartite(V1,V2,p);</span>
+<span class="nc" id="L73">			fail(&quot; Number of vertices can't be negative&quot;);</span>
+<span class="pc" id="L74">		}catch(Exception e){</span>
+			
+		}
+<span class="fc" id="L77">	}</span>
+	
+	//V0 V'0 p =&gt; Erreur
+	@Test
+	public void testB4(){
+<span class="fc" id="L82">		int V1 = -4; </span>
+<span class="fc" id="L83">		int V2 = -8;</span>
+<span class="fc" id="L84">		double p = 0.5;</span>
+		try{
+<span class="nc" id="L86">			Graph g = GraphGenerator.bipartite(V1,V2,p);</span>
+<span class="nc" id="L87">			fail(&quot;Number of vertices can't be negative&quot;);</span>
+<span class="pc" id="L88">		}catch(Exception e){}</span>
+<span class="fc" id="L89">	}</span>
+
+	// V0 V'1 p0 =&gt; Erreur
+	@Test
+	public void testB5(){
+<span class="fc" id="L94">		int V1 = -2; </span>
+<span class="fc" id="L95">		int V2 = 15;</span>
+<span class="fc" id="L96">		double p = -2;</span>
+		try{
+<span class="nc" id="L98">			Graph g = GraphGenerator.bipartite(V1, V2, p);</span>
+<span class="nc" id="L99">			fail(&quot; Probability p must be between 0 and 1&quot;);</span>
+<span class="pc" id="L100">		}catch(Exception e){}</span>
+<span class="fc" id="L101">	}</span>
+	
+	//V0 V'1 p1 =&gt; simple(V'1, p1) 
+	@Test
+	public void testB6(){
+<span class="fc" id="L106">		int V1 = 0;</span>
+<span class="fc" id="L107">		int V2 = 20; </span>
+<span class="fc" id="L108">		int sommeV = V1+V2;</span>
+<span class="fc" id="L109">		double p = 0.1;</span>
+<span class="fc" id="L110">		Graph g = GraphGenerator.bipartite(V1, V2, p);</span>
+<span class="fc" id="L111">		assertEquals(sommeV, g.V());</span>
+<span class="fc" id="L112">	}</span>
+	
+	//V1 V'0 p0 =&gt; Erreur
+	@Test
+	public void testB7(){
+<span class="fc" id="L117">		int V1 = 12; </span>
+<span class="fc" id="L118">		int V2 = -12;</span>
+<span class="fc" id="L119">		double p = 4;</span>
+		try{
+<span class="nc" id="L121">			Graph g = GraphGenerator.bipartite(V1,V2,p);</span>
+<span class="nc" id="L122">			fail(&quot;Number of vertices can't be negative&quot;);</span>
+<span class="pc" id="L123">		}catch(Exception e){}</span>
+<span class="fc" id="L124">	}</span>
+	
+	//V1 V'0 p1 =&gt; simple(V1, p1)
+	@Test
+	public void testB8(){
+<span class="fc" id="L129">		int V1 = 25;</span>
+<span class="fc" id="L130">		int V2 = 0; </span>
+<span class="fc" id="L131">		int sommeV = V1+V2;</span>
+<span class="fc" id="L132">		double p = 0.9;</span>
+<span class="fc" id="L133">		Graph g = GraphGenerator.bipartite(V1, V2, p);</span>
+<span class="fc" id="L134">		assertEquals(sommeV, g.V());</span>
+<span class="fc" id="L135">	}</span>
+	
+	//V1 V'1 p0 =&gt; Erreur
+	@Test
+	public void testB9(){
+<span class="fc" id="L140">		int V1 = 50; </span>
+<span class="fc" id="L141">		int V2 = 100;</span>
+<span class="fc" id="L142">		double p = 5;</span>
+		try{
+<span class="nc" id="L144">			Graph g = GraphGenerator.bipartite(V1, V2, p);</span>
+<span class="nc" id="L145">			fail(&quot;Probability p must be between 0 and 1 (p&gt;1)&quot;);</span>
+<span class="pc" id="L146">		}catch(Exception e){}		</span>
+<span class="fc" id="L147">	}</span>
+	
+	// V1 V'1 p1 =&gt; bipartite(V1, V'1, p1)
+	@Test
+	public void testB10(){
+<span class="fc" id="L152">		int V1 = 300;</span>
+<span class="fc" id="L153">		int V2 = 250; </span>
+<span class="fc" id="L154">		int sommeV = V1+V2;</span>
+<span class="fc" id="L155">		double p = 0.75;</span>
+<span class="fc" id="L156">		Graph g = GraphGenerator.bipartite(V1, V2, p);</span>
+<span class="fc" id="L157">		assertEquals(sommeV, g.V());</span>
+<span class="fc" id="L158">	}</span>
+	
+	// V0 k0 =&gt; Erreur
+	@Test
+	public void testR3(){
+<span class="fc" id="L163">		int V=-3;</span>
+<span class="fc" id="L164">		int k=-1; </span>
+		try{
+<span class="nc" id="L166">			Graph g = GraphGenerator.regular(V, k); </span>
+<span class="nc" id="L167">			fail(&quot;Number of vertice V can't be negative&quot;);</span>
+<span class="pc" id="L168">		}catch(Exception e){}</span>
+<span class="fc" id="L169">	}</span>
+
+	// V0 k1 =&gt; Erreur
+	@Test
+	public void testR4(){
+<span class="fc" id="L174">		int V=-2;</span>
+<span class="fc" id="L175">		int k=2;</span>
+		try {
+<span class="nc" id="L177">			Graph g = GraphGenerator.regular(V, k);</span>
+<span class="nc" id="L178">			fail(&quot;Number of vertice V can't be negative&quot;);</span>
+<span class="pc" id="L179">			}catch(Exception e){}</span>
+<span class="fc" id="L180">	}</span>
+	
+	// V1 k0 =&gt; Erreur
+	@Test
+	public void testR5(){
+		try{
+<span class="fc" id="L186">			int V=13;</span>
+<span class="fc" id="L187">			int k=-5;</span>
+<span class="nc" id="L188">			Graph g = GraphGenerator.regular(V, k);</span>
+<span class="nc" id="L189">			fail(&quot;Degres k can't be negative&quot;);</span>
+<span class="pc" id="L190">		}catch(Exception e){}</span>
+<span class="fc" id="L191">	}</span>
+	
+	// V1 k0 =&gt; regulier(V1, k1)
+	@Test
+	public void testR6(){
+<span class="fc" id="L196">		int V = 15; </span>
+<span class="fc" id="L197">		int k = 4;</span>
+<span class="fc" id="L198">		Graph g = GraphGenerator.regular(V, k);</span>
+<span class="fc" id="L199">		assertEquals(V, g.V());</span>
+<span class="fc" id="L200">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTestsTP3 (6 nov. 2017 10:51:31)</div></body></html>

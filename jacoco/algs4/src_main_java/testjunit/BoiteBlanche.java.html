@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>BoiteBlanche.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTestsTP3 (6 nov. 2017 10:51:31)</a> &gt; <a href="../../index.html" class="el_group">algs4</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">testjunit</a> &gt; <span class="el_source">BoiteBlanche.java</span></div><h1>BoiteBlanche.java</h1><pre class="source lang-java linenums">package testjunit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import edu.princeton.cs.algs4.Graph;
+import edu.princeton.cs.algs4.GraphGenerator;
+
+<span class="fc" id="L11">public class BoiteBlanche {</span>
+
+	/*
+	 * Bipartite
+	 */
+	
+	@Test
+	public void bipartite_0() {
+		
+		try
+		{
+<span class="nc" id="L22">			Graph g = GraphGenerator.bipartite(4,4,20);</span>
+<span class="nc" id="L23">			fail(&quot;Too many edges&quot;);</span>
+<span class="nc" id="L24">		}</span>
+<span class="fc" id="L25">		catch(Exception e )</span>
+		{
+			
+		}
+<span class="fc" id="L29">	}</span>
+	
+	@Test
+	public void bipartite_1() {
+		
+		try
+		{
+<span class="nc" id="L36">			Graph g = GraphGenerator.bipartite(10,10,-1);</span>
+<span class="nc" id="L37">			Assert.fail();</span>
+<span class="nc" id="L38">		}</span>
+<span class="fc" id="L39">		catch(Exception e )</span>
+		{
+			
+		}
+<span class="fc" id="L43">	}</span>
+	
+	/*
+	 * Simple
+	 */
+	@Test
+	public void simple_0() {
+<span class="fc" id="L50">		Graph g = GraphGenerator.simple(10,10);</span>
+		
+<span class="fc" id="L52">		assertEquals(g.getTypeName(), &quot;simple&quot;);</span>
+<span class="fc" id="L53">	}</span>
+	
+	@Test
+	public void simple_1() {
+		
+		try
+		{
+<span class="nc" id="L60">			Graph g = GraphGenerator.simple(10,100);</span>
+<span class="nc" id="L61">			fail();</span>
+<span class="nc" id="L62">		}</span>
+<span class="fc" id="L63">		catch(Exception e) {}</span>
+<span class="fc" id="L64">	}</span>
+	
+	@Test
+	public void simple_2() {
+		
+		try
+		{
+<span class="nc" id="L71">			Graph g = GraphGenerator.simple(10,-1);</span>
+<span class="nc" id="L72">			fail();</span>
+<span class="nc" id="L73">		}</span>
+<span class="fc" id="L74">		catch(Exception e) {}</span>
+<span class="fc" id="L75">	}</span>
+		
+	@Test
+	public void binaryTree_() {
+<span class="fc" id="L79">		Graph g = GraphGenerator.binaryTree(10);</span>
+		
+<span class="fc" id="L81">		assertEquals(g.getTypeName(), &quot;binaryTree&quot;);</span>
+<span class="fc" id="L82">	}</span>
+
+	@Test
+	public void complete_() {
+<span class="fc" id="L86">		Graph g = GraphGenerator.complete(10);</span>
+		
+<span class="fc" id="L88">		assertEquals(g.getTypeName(), &quot;complete&quot;);</span>
+<span class="fc" id="L89">	}</span>
+	
+	@Test
+	public void completeBipartite_() {
+<span class="fc" id="L93">		Graph g = GraphGenerator.completeBipartite(10,10);</span>
+		
+<span class="fc" id="L95">		assertEquals(g.getTypeName(), &quot;completeBipartite&quot;);</span>
+<span class="fc" id="L96">	}</span>
+	
+	@Test
+	public void path_() {
+<span class="fc" id="L100">		Graph g = GraphGenerator.path(10);</span>
+		
+<span class="fc" id="L102">		assertEquals(g.getTypeName(), &quot;path&quot;);</span>
+<span class="fc" id="L103">	}</span>
+	
+	/*
+	 * Star 
+	 */
+	
+	@Test
+	public void star_0() {
+<span class="fc" id="L111">		Graph g = GraphGenerator.star(10);</span>
+		
+<span class="fc" id="L113">		assertEquals(g.getTypeName(), &quot;star&quot;);</span>
+<span class="fc" id="L114">	}</span>
+	
+	@Test
+	public void star_1() {
+		
+		try
+		{
+<span class="nc" id="L121">			Graph g = GraphGenerator.star(0);</span>
+<span class="nc" id="L122">			fail();</span>
+<span class="nc" id="L123">		}</span>
+<span class="fc" id="L124">		catch(Exception e)</span>
+		{
+			
+		}
+<span class="fc" id="L128">	}</span>
+	
+	@Test
+	public void cycle_() {
+<span class="fc" id="L132">		Graph g = GraphGenerator.cycle(10);</span>
+		
+<span class="fc" id="L134">		assertEquals(g.getTypeName(), &quot;cycle&quot;);</span>
+<span class="fc" id="L135">	}</span>
+	
+	/*
+	 * euleriqnCycle
+	 */
+	@Test
+	public void eulerianCycle_() {
+<span class="fc" id="L142">		Graph g = GraphGenerator.eulerianCycle(10,20);</span>
+		
+<span class="fc" id="L144">		assertEquals(g.getTypeName(), &quot;eulerianCycle&quot;);</span>
+<span class="fc" id="L145">	}</span>
+	@Test
+	public void eulerianCycle_1() {
+		
+		try
+		{
+<span class="nc" id="L151">			Graph g = GraphGenerator.eulerianCycle(10,-1);</span>
+<span class="nc" id="L152">			fail();</span>
+<span class="nc" id="L153">		}</span>
+<span class="fc" id="L154">		catch(Exception e) {}</span>
+<span class="fc" id="L155">	}</span>
+	
+	@Test
+	public void eulerianCycle_2() {
+		
+		try
+		{
+<span class="nc" id="L162">			Graph g = GraphGenerator.eulerianCycle(0,10);</span>
+<span class="nc" id="L163">			fail();</span>
+<span class="nc" id="L164">		}</span>
+<span class="fc" id="L165">		catch(Exception e) {}</span>
+<span class="fc" id="L166">	}</span>
+	
+	/*
+	 * EulerianPath
+	 */
+	@Test
+	public void eulerianPath_() {
+<span class="fc" id="L173">		Graph g = GraphGenerator.eulerianPath(10,15);</span>
+		
+<span class="fc" id="L175">		assertEquals(g.getTypeName(), &quot;eulerianPath&quot;);</span>
+<span class="fc" id="L176">	}</span>
+	
+	@Test
+	public void eulerianPath_1() {
+		
+		try
+		{
+<span class="nc" id="L183">			Graph g = GraphGenerator.eulerianPath(10,-1);</span>
+<span class="nc" id="L184">			fail();</span>
+<span class="nc" id="L185">		}</span>
+<span class="fc" id="L186">		catch(Exception e) {}</span>
+<span class="fc" id="L187">	}</span>
+	
+	@Test
+	public void eulerianPath_2() {
+		
+		try
+		{
+<span class="nc" id="L194">			Graph g = GraphGenerator.eulerianPath(0,10);</span>
+<span class="nc" id="L195">			fail();</span>
+<span class="nc" id="L196">		}</span>
+<span class="fc" id="L197">		catch(Exception e) {}</span>
+<span class="fc" id="L198">	}</span>
+	/*
+	 * wheel
+	 */
+	@Test
+	public void wheel_0() {
+<span class="fc" id="L204">		Graph g = GraphGenerator.wheel(10);</span>
+		
+<span class="fc" id="L206">		assertEquals(g.getTypeName(), &quot;wheel&quot;);</span>
+<span class="fc" id="L207">	}</span>
+	
+	@Test
+	public void wheel_1() {
+		
+		try
+		{
+<span class="nc" id="L214">			Graph g = GraphGenerator.wheel(0);</span>
+<span class="nc" id="L215">			fail();</span>
+<span class="nc" id="L216">		}</span>
+<span class="fc" id="L217">		catch(Exception e)</span>
+		{
+			
+		}
+<span class="fc" id="L221">	}</span>
+	
+
+	
+	/*
+	 * tree 
+	 */
+	@Test
+	public void tree_0() {
+<span class="fc" id="L230">		Graph g = GraphGenerator.tree(10);</span>
+		
+<span class="fc" id="L232">		assertEquals(g.getTypeName(), &quot;tree&quot;);</span>
+<span class="fc" id="L233">	}</span>
+	
+	@Test
+	public void tree_1() {
+<span class="fc" id="L237">		Graph g = GraphGenerator.tree(1);</span>
+		
+<span class="fc" id="L239">		assertEquals(g.getTypeName(), &quot;tree&quot;);</span>
+<span class="fc" id="L240">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>AllTestsTP3 (6 nov. 2017 10:51:31)</div></body></html>
