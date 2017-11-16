@@ -88,7 +88,7 @@ public class BoiteBlanche {
 	 * binaryTree
 	 */
 	@Test
-	public void binaryTree_6() {
+	public void binaryTree_6() { 
 		Graph g = GraphGenerator.binaryTree(10);
 		
 		assertEquals(g.getTypeName(), "binaryTree");

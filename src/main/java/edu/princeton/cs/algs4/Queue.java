@@ -99,7 +99,7 @@ public class Queue<Item> implements Iterable<Item> {
         last.item = item;
         last.next = null;
         if (isEmpty()) first = last;
-        else           oldlast.next = last;
+        else oldlast.next = last;
         n++;
     }
 
