@@ -61,8 +61,8 @@ public class Queue<Item> implements Iterable<Item> {
     /*
      * Returns the last attribute
      */
-    public Node<Item> getLast(){
-    	return last;
+    public Item getLast(){
+    	return last.item;
     }
 
     /**
