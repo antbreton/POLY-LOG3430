@@ -19,11 +19,11 @@ public class MadumTest {
 	public void firstTranchForLast() {
 		
 		Queue<String> q = new Queue<>();
+		
 		try {
 			q.getLast();
 			fail("Cannot get the Last of an empty Queue");
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {	}
 
 		q.enqueue("s1");
 
@@ -34,8 +34,7 @@ public class MadumTest {
 		try {
 			q.getLast();
 			fail("Cannot get the Last of an empty Queue");
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {	}
 	}
 
 	/*
@@ -44,25 +43,26 @@ public class MadumTest {
 	 */
 	@Test
 	public void secondTranchForLast() {
-		
-		
+				
 		Queue<String> q = new Queue<>();
+		
 		try {
 			q.getLast();
 			fail("Cannot get the Last of an empty Queue");
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {	}
+		
 		try {
 			q.dequeue();
 			fail("Cannot dequeue an empty Queue");
-		} catch (Exception e) {
-		}		
+		} catch (Exception e) {}		
+		
 		try {
 			q.getLast();
 			fail("Cannot get the Last of an empty Queue");
-		} catch (Exception e) {
-		}
+		} catch (Exception e) {	}
+		
 		q.enqueue("s1");
+		
 		assertEquals("s1", q.getLast());
 	}
 
@@ -74,10 +74,15 @@ public class MadumTest {
 	public void firstTranchForN() {
 		
 		Queue<String> q = new Queue<>();
+		
 		assertEquals(0, q.size());
+		
 		q.enqueue("s1");
+		
 		assertEquals(1, q.size());
+		
 		q.dequeue();
+		
 		assertEquals(0, q.size());
 	}
 
@@ -87,11 +92,29 @@ public class MadumTest {
 	 */
 	@Test
 	public void secondTranchForN() {
+		
+		Queue<String> q = new Queue<>();
+		
+			
+		assertEquals(q.size(),0);
+		
+		try
+		{
+			q.dequeue();
+			fail("Queue is empty");
+		} catch(Exception e) {}		
+		
+		assertEquals(q.size(),0);
+		
+		q.enqueue("s1");
+		
+		assertEquals(q.size(),1);
+
 	}
 
 	/*
-	 * Test the first tranch of FIRST attribute 
-	 * Queue -> peek -> enqueue -> peek -> dequeue -> peek
+	 * Test the first tranch of FIRST attribute
+	 * Queue -> peek -> enqueue -> peek -> dequeue -> peek -> isEmpty -> iterator
 	 */
 	@Test
 	public void firstTranchForFirst() {
@@ -112,15 +135,53 @@ public class MadumTest {
 		try {
 			q.peek();
 			fail("Cannot peek on an empty Queue");
-		} catch (Exception e) {
-		}
+		} catch(Exception e) {}		
+		
+		q.isEmpty();
+		
+		q.iterator();
+		
+		try
+		{
+			q.peek();
+			fail("Cannot peek on an empty Queue");
+		} catch(Exception e) {}			
 	}
-
+	
 	/*
-	 * Test the second tranch of FIRST attribute 
-	 * Queue -> peek -> dequeue -> peek -> enqueue -> peek
+	 * Test the second tranch of FIRST attribute
+	 * Queue -> peek -> dequeue -> peek -> enqueue -> peek -> isEmpty -> iterator
 	 */
 	@Test
 	public void secondTranchForFirst() {
+		Queue<String> q = new Queue<>();
+		
+		try
+		{
+			q.peek();
+			fail("Cannot peek on an empty Queue");
+		} catch(Exception e) {}
+		
+		try
+		{
+			q.dequeue();
+			fail("Queue is empty");
+		} catch(Exception e) {}		
+		
+		try
+		{
+			q.peek();
+			fail("Cannot peek on an empty Queue");
+		} catch(Exception e) {}		
+		
+		q.enqueue("s1");
+		
+		assertEquals("s1",q.peek());
+	
+		q.isEmpty();
+		
+		q.iterator();
+		
+		assertEquals("s1",q.peek());
 	}
 }
