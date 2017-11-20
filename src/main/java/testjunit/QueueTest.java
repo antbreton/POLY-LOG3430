@@ -14,7 +14,7 @@ public class QueueTest {
 	 * Tests the first tranch : S1 -> exit with its differents causes
 	 */
 	
-	// Cause 1 : peek on an emptyList
+	// Cause 1 : peek on an empty Queue
 	@Test
 	public void s1ToExit1(){
 		try{
@@ -24,7 +24,7 @@ public class QueueTest {
 		}catch(Exception e){}	
 	}
 	
-	// Cause 2 : peek on an emptyList
+	// Cause 2 : peek on an empty Queue
 	@Test
 	public void s1ToExit2(){
 		try{
@@ -71,5 +71,19 @@ public class QueueTest {
 		q.enqueue(item2);
 		q.dequeue();
 		Assert.assertEquals(1, q.size()); 
+	}
+	
+	/*
+	 * 
+	 */
+	// Occurs if size > 1
+	@Test
+	public void s1S2S2ByEnqueue (){
+		Queue q = new Queue();
+		String item1 = "item1ToAdd";
+		String item2 = "item2ToAdd";
+		q.enqueue(item1);		
+		q.enqueue(item2);
+		Assert.assertEquals(2, q.size()); 
 	}
 }
