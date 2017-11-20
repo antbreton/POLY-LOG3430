@@ -58,6 +58,12 @@ public class Queue<Item> implements Iterable<Item> {
         last  = null;
         n = 0;
     }
+    /*
+     * Returns the last attribute
+     */
+    public Node<Item> getLast(){
+    	return last;
+    }
 
     /**
      * Returns true if this queue is empty.

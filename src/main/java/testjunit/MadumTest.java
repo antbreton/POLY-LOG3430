@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.princeton.cs.algs4.Queue;
+
 /*
  * Test cases for Queue class
  */
@@ -12,11 +14,12 @@ public class MadumTest {
 	/*
 	 * Test the first tranch of LAST attribute
 	 * Queue -> getLast -> enqueue -> getLAst -> dequeue -> getLast
-	 */
-	
+	 */	
 	@Test
 	public void firstTranchForLast() {
+
 	}
+	
 	/*
 	 * Test the second tranch of LAST attribute
 	 * Queue -> getLast -> dequeue -> getLAst -> enqueue -> getLast
@@ -32,6 +35,7 @@ public class MadumTest {
 	@Test
 	public void firstTranchForN() {
 	}
+	
 	/*
 	 * Test the second tranch of N attribute
 	 * Queue -> size -> dequeue -> size -> enqueue -> size
