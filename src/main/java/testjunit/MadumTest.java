@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.princeton.cs.algs4.Queue;
+
 /*
  * Test cases for Queue class
  */
@@ -46,6 +48,25 @@ public class MadumTest {
 	 */
 	@Test
 	public void firstTranchForFirst() {
+		Queue<String> q = new Queue<>();
+		
+		try
+		{
+			q.peek();
+			fail("Cannot peek on an empty Queue");
+		} catch(Exception e) {}
+		
+		q.enqueue("s1");
+		
+		assertEquals("s1",q.peek());
+		
+		q.dequeue();
+		
+		try
+		{
+			q.peek();
+			fail("Cannot peek on an empty Queue");
+		} catch(Exception e) {}		
 	}
 	
 	/*
