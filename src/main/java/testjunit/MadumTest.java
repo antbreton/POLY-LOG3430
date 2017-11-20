@@ -11,6 +11,7 @@ public class MadumTest {
 
 	/*
 	 * Test the first tranch of LAST attribute
+	 * Queue -> getLast -> enqueue -> getLAst -> dequeue -> getLast
 	 */
 	
 	@Test
@@ -18,6 +19,7 @@ public class MadumTest {
 	}
 	/*
 	 * Test the second tranch of LAST attribute
+	 * Queue -> getLast -> dequeue -> getLAst -> enqueue -> getLast
 	 */
 	@Test
 	public void secondTranchForLast() {
@@ -25,12 +27,14 @@ public class MadumTest {
 
 	/*
 	 * Test the first tranch of N attribute
+	 * Queue -> size -> enqueue -> size -> dequeue -> size
 	 */
 	@Test
 	public void firstTranchForN() {
 	}
 	/*
 	 * Test the second tranch of N attribute
+	 * Queue -> size -> dequeue -> size -> enqueue -> size
 	 */
 	@Test
 	public void secondTranchForN() {
@@ -38,6 +42,7 @@ public class MadumTest {
 	
 	/*
 	 * Test the first tranch of FIRST attribute
+	 * Queue -> peek -> enqueue -> peek -> dequeue -> peek
 	 */
 	@Test
 	public void firstTranchForFirst() {
@@ -45,6 +50,7 @@ public class MadumTest {
 	
 	/*
 	 * Test the second tranch of FIRST attribute
+	 * Queue -> peek -> dequeue -> peek -> enqueue -> peek
 	 */
 	@Test
 	public void secondTranchForFirst() {
