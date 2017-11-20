@@ -133,4 +133,16 @@ public class MadumTest {
 		
 		assertEquals("s1",q.peek());
 	}
+	
+	/*
+	 * Test boite blanche pour obtenir 100% de coverage
+	 */
+	@Test
+	public void enqueueBoiteBlanche() {
+		Queue<String> q = new Queue<>();
+		
+		q.enqueue("s1");
+		q.enqueue("s2");
+		assertEquals(q.size(),2);
+	}
 }
