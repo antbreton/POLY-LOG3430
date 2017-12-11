@@ -62,7 +62,7 @@ public class Stack<Item> implements Iterable<Item> {
      */
     public Stack() {
         first = null;
-        n = 0;
+        setN(0);
     }
 
     /**
@@ -80,7 +80,7 @@ public class Stack<Item> implements Iterable<Item> {
      * @return the number of items in this stack
      */
     public int size() {
-        return n;
+        return getN();
     }
 
     /**
@@ -93,7 +93,7 @@ public class Stack<Item> implements Iterable<Item> {
         first = new Node<Item>();
         first.item = item;
         first.next = oldfirst;
-        n++;
+        setN(getN() + 1);
     }
 
     /**
@@ -106,7 +106,7 @@ public class Stack<Item> implements Iterable<Item> {
         if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         Item item = first.item;        // save item to return
         first = first.next;            // delete first node
-        n--;
+        setN(getN() - 1);
         return item;                   // return the saved item
     }
 
@@ -187,6 +187,14 @@ public class Stack<Item> implements Iterable<Item> {
         }
         StdOut.println("(" + stack.size() + " left on stack)");
     }
+
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
 }
 
 
